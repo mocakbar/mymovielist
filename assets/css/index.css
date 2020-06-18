@@ -197,6 +197,7 @@ body.dark #query::placeholder {
 body.dark .con-main, body.dark #note, body.dark .person-name {
     background-color: #1d1b26;
     color: #898b8d;
+    transition: .5s all ease;
 }
 body.dark .not-found {
     filter: invert(.4);

@@ -63,4 +63,37 @@ $(document).ready(function(){
 		})
 	}
 
+
+	// function menampilkan query person
+	$("#note").on('click', '.person', function(){
+		let resourceId = $(this).attr("resourceid");
+		$.ajax({
+			url: "https://api.themoviedb.org/3/person/" + resourceId + "?",
+			data: { "api_key": "4dda69557f9d1b4d4930dd9ee950047d" },
+			dataType: 'json',
+			success: function(result, status, xhr){
+
+				let image = result['profile_path'] == null ? "assets/img/image-not-found.png" : "https://image.tmdb.org/t/p/w500/" + result['profile_path'];
+
+				let nama = result['name'];
+				let tanggalLahir = result['birthday'];
+				let tempatLahir = result['place_of_birth'];
+				let biography = result['biography'];
+				let web = result['homepage'] == null ? 'Tidak memiliki website' : result['homepage'];
+				let link = web == 'Tidak memiliki website' ? '#' : result['hompage'];
+				let gender = result['gender'] == 1 ? 'Perempuan' : 'Laki-Laki';
+
+				let resultHtml = "<div class='person-view'><img class='profil-img' src='" + image + "' /><div class='person-info'><span class='nama-person'><strong>Name Lengkap :</strong> " + nama + "</span><span class='tgl-lahir'><strong>Tanggal Lahir :</strong> " + tanggalLahir + "</span><span class='tempat-lahir'><strong>Tempat Lahir :</strong> " + tempatLahir + "</span><span class='gender'><strong>Jenis Kelamin :</strong> " + gender + "</span><span class='web'><strong>Website : </strong><a href='" + link + "'>" + web + "</a></span><p class='bio'><strong>Biography :</strong><br>" + biography + "</p></div>";
+
+				$('#content-view').html(resultHtml);
+
+				$('#myModal').show()
+				$('#note, #halaman').hide()
+			},
+			error: function (xhr, status, error) {
+				$("#note").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+			}
+		})
+	})
+
 })
