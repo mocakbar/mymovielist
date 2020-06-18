@@ -53,7 +53,14 @@ $(document).ready(function(){
 				resultHtml.append("</div>");
 				$('#note').html(resultHtml);
 
-				Halaman(result['total_pages'])
+				if( a == "true"){
+					$('#note, #halaman').show()
+					$('#myModal').hide()
+				} else {
+					$('#myModal').show()
+				}
+
+				// Halaman(result['total_pages'])
 
 				console.log(result)
 			},
@@ -62,7 +69,6 @@ $(document).ready(function(){
 			}
 		})
 	}
-
 
 	// function menampilkan query person
 	$("#note").on('click', '.person', function(){
@@ -89,6 +95,16 @@ $(document).ready(function(){
 
 				$('#myModal').show()
 				$('#note, #halaman').hide()
+
+				let y = $('#myModal').show();
+				
+
+				if(x = y) {
+					return a = 'true'
+				} else {
+					return a ='false'
+				}
+
 			},
 			error: function (xhr, status, error) {
 				$("#note").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
@@ -97,3 +113,5 @@ $(document).ready(function(){
 	})
 
 })
+
+let a  = "false"
