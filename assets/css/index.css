@@ -74,6 +74,7 @@ p {
     font-size: medium;
     right: 2px;
     line-height: 36px;
+    outline: none;
 }
 
 .searchx .search-icon {
@@ -121,12 +122,68 @@ p {
 }
 
 
-/* dark theme */
+/* search query */
+#note {
+    background-color: transparent;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #7A79D7;
+    overflow: hidden;
+}
+
+.not-found {
+    display: block;
+    margin: 30px auto 70px auto;
+    width: 30%;
+}
+
+.eror-teks {
+    padding: 10px;
+    display: block;
+}
+
+#note .xty {
+    display: block; 
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 0 10px 20px;
+    border-bottom: 2px solid grey;
+    margin: 0 0 20PX 0;
+}
+
+.person {
+    width: 23%;
+    height: 300px;
+    padding: 6px;
+    margin-bottom: 50px;
+    margin-left: 18px;
+    float: left;
+    text-align: center;
+}
+
+.person img {
+    width: 75%;
+    cursor: pointer;
+}
+
+.person-name {
+    margin: 5px 0;
+    font-size: 1.3vrem;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+/* --------------------------- DARK THEME ---------------------------------- */
 body.dark, body.dark .nav-header {
     background-color: #16151d;
     transition: .5s all ease;
 }
 
+/* dark search */
 body.dark #query {
     background-color: #696969;
     color: #fff;
@@ -135,6 +192,14 @@ body.dark #query {
 body.dark #query::placeholder {
     color: #fff;
     opacity: 0.7;
+}
+
+body.dark .con-main, body.dark #note, body.dark .person-name {
+    background-color: #1d1b26;
+    color: #898b8d;
+}
+body.dark .not-found {
+    filter: invert(.4);
 }
 
 
