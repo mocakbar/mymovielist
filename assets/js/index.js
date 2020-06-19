@@ -89,7 +89,7 @@ $(document).ready(function(){
 				let link = web == 'Tidak memiliki website' ? '#' : result['hompage'];
 				let gender = result['gender'] == 1 ? 'Perempuan' : 'Laki-Laki';
 
-				let resultHtml = "<div class='person-view'><img class='profil-img' src='" + image + "' /><div class='person-info'><span class='nama-person'><strong>Name Lengkap :</strong> " + nama + "</span><span class='tgl-lahir'><strong>Tanggal Lahir :</strong> " + tanggalLahir + "</span><span class='tempat-lahir'><strong>Tempat Lahir :</strong> " + tempatLahir + "</span><span class='gender'><strong>Jenis Kelamin :</strong> " + gender + "</span><span class='web'><strong>Website : </strong><a href='" + link + "'>" + web + "</a></span><div class='film-movie'></div></div><p class='bio'><strong>Biography :</strong><br>" + biography + "</p>";
+				let resultHtml = "<div class='person-view'><img class='profil-img' src='" + image + "' /><div class='person-info'><span class='nama-person'><strong>Name Lengkap :</strong> " + nama + "</span><span class='tgl-lahir'><strong>Tanggal Lahir :</strong> " + tanggalLahir + "</span><span class='tempat-lahir'><strong>Tempat Lahir :</strong> " + tempatLahir + "</span><span class='gender'><strong>Jenis Kelamin :</strong> " + gender + "</span><span class='web'><strong>Website : </strong><a href='" + link + "'>" + web + "</a></span><span><strong>Film :</strong></span><div class='film-movie'><div class='rex'></div></div></div><p class='bio'><strong>Biography :</strong>" + biography + "</p>";
 
 				$('#content-view').html(resultHtml);
 
@@ -121,17 +121,17 @@ $(document).ready(function(){
 			dataType: 'json',
 			success: function(result, status, xhr){
 				
-				let resultHtml = $('<div>')
+				let resultHtml = $('<section class="woe">')
 				
 				for(x = 0; x<10; x++){
-					let image = result['cast'][x]['poster_path'] == null ? "assets/img/image-not-found.png" : "https://image.tmdb.org/t/p/w500/" + result['cast'][x]['poster_path'];
+					let image = result['cast'][x]['poster_path'] == null ? "assets/img/image-404.png" : "https://image.tmdb.org/t/p/w500/" + result['cast'][x]['poster_path'];
 					let title = result['cast'][x]['title'];
 					
-					resultHtml.append("<div class='person-film'><img src='" + image + "'/><span class='person-title-film'>" + title + "</span></div>")
+					resultHtml.append("<div class='person-film'><img src='" + image + "'/><span class='person-title-film'>" + title + "</span>")
 				}
 
-				resultHtml.append("</div>");
-				$('.film-movie').html(resultHtml)
+				resultHtml.append("</section>");
+				$('.rex').html(resultHtml)
 				console.log(resultHtml);
 			}
 		})

@@ -177,6 +177,86 @@ p {
 }
 
 /* view person */
+.profil-img {
+    width: 30%;
+    margin: 20px 20px 20px 20px;
+    border-radius: 10px;
+}
+
+.person-info {
+    float: right;
+    width: 730px;
+    margin-top: 20px;
+}
+
+.person-info span {
+    display: block;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    margin: 15px;
+}
+
+/* section person film */
+.film-movie {
+    width: calc(100% - 39px);
+    padding: 15px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: justify;
+    font-size: 14px;
+    box-shadow: rgba(0,53,126,.2) 0 0 2px 0;
+    max-width: 100%;
+    overflow: hidden;
+    animation: animatetop .8s;
+    position: relative;
+}
+
+.rex {
+    position: relative;
+    overflow: auto;
+}
+
+.woe {
+    width: 1200px;
+}
+
+.person-film {
+    float: left;
+    width: 100px;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-top: 0;
+    position: relative;
+    margin: 0 10px;
+}
+
+.person-film img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 10px;
+}
+
+span.person-title-film {
+    margin: 5px 0 20px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    box-sizing: border-box;
+
+}
+
+.bio {
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bio strong {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    display: block;
+}
 
 /* --------------------------- DARK THEME ---------------------------------- */
 body.dark, body.dark .nav-header {
@@ -185,7 +265,7 @@ body.dark, body.dark .nav-header {
 }
 
 /* dark search */
-body.dark #query {
+body.dark #query, body.dark .film-movie {
     background-color: #696969;
     color: #fff;
 }
