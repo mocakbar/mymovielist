@@ -258,6 +258,45 @@ span.person-title-film {
     display: block;
 }
 
+
+/* footer section */
+#main-footer {
+    height: 35px;
+    background-color: #7A79D7;
+    text-align: center;
+}
+
+.footer-list li {
+    list-style: none;
+    display: inline;
+    color: white;
+}
+
+.footer-list a {
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 6px 40px 6px 40px;
+    text-decoration: none;
+}
+
+
+#copyright {
+    background-color: #222222;
+    text-align: center;
+    padding: 20px 0 10px 0;
+    color: #fff;
+}
+
+#copyright p {
+    font-family: 'montserrat';
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin: 0;
+}
+
 /* --------------------------- DARK THEME ---------------------------------- */
 body.dark, body.dark .nav-header {
     background-color: #16151d;
