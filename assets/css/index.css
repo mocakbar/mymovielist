@@ -509,6 +509,46 @@ span.person-title-film {
     width: 330px;
 }
 
+/* review section */
+#review {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ty a {
+    color: black;
+    text-decoration: none;
+}
+
+.ty a:hover {
+    color: #7A79D7;
+}
+
+.ty {
+    margin-bottom: 50px;
+}
+
+.ty img {
+    width: 220px;
+    height: 150px;
+    float: left;
+    margin-right: 20px;
+}
+
+.judul-review {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.review-isi {
+    display: block;
+    height: 50px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
 /* -------------------------------------------------- side bar --------------------------------- */
 #side-bar {
     width: 340px;
@@ -555,11 +595,18 @@ body.dark #query::placeholder {
     opacity: 0.7;
 }
 
-body.dark .con-main, body.dark #note, body.dark .person-name {
+body.dark .con-main, body.dark #note,
+body.dark .person-name, body.dark .main-head,
+body.dark .main-body, body.dark #news, body.dark #review {
     background-color: #1d1b26;
     color: #898b8d;
     transition: .5s all ease;
 }
+
+body.dark a {
+    color: #c2c2c2;
+}
+
 body.dark .not-found {
     filter: invert(.4);
 }
