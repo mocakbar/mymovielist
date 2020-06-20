@@ -429,7 +429,7 @@ span.person-title-film {
     font-size: 12px;
     background-color: #fff;
     margin-bottom: 30px;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
 }
 
 /* ------------------------------------------------- news section ---------------------------- */
@@ -513,7 +513,8 @@ span.person-title-film {
 #review {
     overflow: hidden;
     background-color: #fff;
-    border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .ty a {
@@ -547,6 +548,63 @@ span.person-title-film {
     height: 50px;
     font-size: 12px;
     overflow: hidden;
+}
+
+
+/* trailer */
+#trailer {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.carousel-item.active {
+    background-color: #fff;
+    outline: none;
+    border: none;
+    
+}
+
+.oz {
+    width: 100%;
+    height: 500px;
+    border: 0;
+}
+
+.carousel-control-prev {
+    /*size */
+    height: 50px;
+    width: 50px;
+    /*color */
+    background: #1b1b1b none repeat scroll 0 0;
+    opacity: 0.5;
+    /*shape border*/
+    border: 0 none;
+    border-radius: 50%; /*zero for square */
+    /*symbol */
+    color: #fff;
+    line-height: 70px;
+    /*vertical position */
+    top: 45%;
+    left: 5%;
+}
+
+.carousel-control-next {
+    right: 5%;/*size */
+    height: 50px;
+    width: 50px;
+    /*color */
+    background: #1b1b1b none repeat scroll 0 0;
+    opacity: 0.5;
+    /*shape border*/
+    border: 0 none;
+    border-radius: 50%; /*zero for square */
+    /*symbol */
+    color: #fff;
+    line-height: 70px;
+    /*vertical position */
+    top: 45%;
 }
 
 /* -------------------------------------------------- side bar --------------------------------- */
@@ -597,7 +655,8 @@ body.dark #query::placeholder {
 
 body.dark .con-main, body.dark #note,
 body.dark .person-name, body.dark .main-head,
-body.dark .main-body, body.dark #news, body.dark #review {
+body.dark .main-body, body.dark #news, body.dark #review,
+body.dark .carousel-item.active {
     background-color: #1d1b26;
     color: #898b8d;
     transition: .5s all ease;
