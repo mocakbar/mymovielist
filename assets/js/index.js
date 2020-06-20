@@ -52,6 +52,7 @@ $(document).ready(function(){
 
 				resultHtml.append("</div>");
 				$('#note').html(resultHtml);
+				$('#box-content').hide()
 
 				if( a == "true"){
 					$('#note, #halaman').show()
@@ -136,6 +137,28 @@ $(document).ready(function(){
 			}
 		})
 	}
+
+	$('.box-news a').on('mouseenter', function(){
+		$('.box-news a:hover img').css({
+			'transform' : 'scale(1.3)', 
+			'transition' : 'transform .5s ease',
+		}),
+		$('.box-news a:hover .kategori').css({
+			'opacity' : '1'
+		})
+	})
+
+	$('.box-news a').on('mouseleave', function(){
+		$('.box-news a img').css({
+			'transform' : 'scale(1)',
+			'transition' : 'transform .5s ease'
+		}),
+		$('.box-news a .kategori').css({
+			'opacity' : '0.5'
+		})
+	})
+
+
 
 })
 
