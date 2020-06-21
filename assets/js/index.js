@@ -146,11 +146,9 @@ $(document).ready(function(){
     dataType :'json',
     success: function(result, status, xhr){
 
-      let resultHtml = ''
-      let kuwi = ''
-      let mbuh = ''
+      let resultHtml = '';let kuwi = '';let mbuh = '';let c = ''; let d = ''; let e = '';
 
-      for(i=0; i<3; i++){
+      for(i=0; i<5; i++){
         let cinta = "https://www.youtube.com/embed/" + result['items'][i]['snippet']['resourceId']['videoId']
 
         if (i == 0){
@@ -159,13 +157,20 @@ $(document).ready(function(){
           kuwi += "<iframe allowFullScreen='allowFullScreen' class='oz' src='" + cinta + "'></iframe>"
         } else if ( i == 2){
           mbuh += "<iframe allowFullScreen='allowFullScreen' class='oz' src='" + cinta + "'></iframe>"
-        }
-
+        } else if ( i == 3){
+          c += "<iframe allowFullScreen='allowFullScreen' class='oz' src='" + cinta + "'></iframe>"
+        } else if ( i == 4){
+          d += "<iframe allowFullScreen='allowFullScreen' class='oz' src='" + cinta + "'></iframe>"
+        } else if ( i == 5){
+          e += "<iframe allowFullScreen='allowFullScreen' class='oz' src='" + cinta + "'></iframe>"
+        } 
       }
 
       $('.carousel-item.active').html(resultHtml)
       $('.carousel-item.two').html(kuwi)
       $('.carousel-item.three').html(mbuh)
+      $('.carousel-item.four').html(c)
+      $('.carousel-item.five').html(d)
 
       console.log(result)
       
