@@ -30,6 +30,9 @@ $(document).ready(function(){
 		return pesanEror;
 	}
 
+	
+let a  = "false"
+
 	// function mengambil API dari tmdb
 	function QueryCall(page){
 		$.ajax({
@@ -203,7 +206,40 @@ $(document).ready(function(){
 	})
 
 
+	//memanggil API Top Movie
+	$.ajax({
+		url: "https://api.themoviedb.org/3/movie/popular?&page=1",
+			data: { "api_key": "4dda69557f9d1b4d4930dd9ee950047d" },
+			dataType: "json",
+			success: function(result, status, xhr){
+				let resultHtml = '';
+				
+				for(i=0; i<5; i++){
+
+					let img = "https://image.tmdb.org/t/p/w500/" + result['results'][i]['poster_path'];
+
+					let title = result['results'][i]['title']
+					let release = result['results'][i]['release_date']
+
+					resultHtml += "<div class='top" + (i + 1) + "'>"
+					resultHtml += '<div class="popular-movie">'
+					resultHtml += "<p class='no'>" + (i + 1) + "</p>"
+					resultHtml += "<img src='" + img + "'>"
+					resultHtml += "<div class='ket'>"
+					resultHtml += "<h4>" + title + "</h4>"
+					resultHtml += "<p class='tgl-tahun'><b>" + release + "</p>"
+					resultHtml += "</div>"
+					resultHtml += "</div>"
+					resultHtml += "</div>"
+
+				}
+
+				$("#top-movie .main-body").html(resultHtml)
+
+				console.log(result)
+			}
+	})
+
+
 
 })
-
-let a  = "false"
