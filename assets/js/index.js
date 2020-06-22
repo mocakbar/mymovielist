@@ -213,8 +213,14 @@ let a  = "false"
 			dataType: "json",
 			success: function(result, status, xhr){
 				let resultHtml = '';
+
+				let wos
 				
 				for(i=0; i<5; i++){
+
+					if(i == 0){
+						wos = "https://image.tmdb.org/t/p/w500/" + result['results'][0]['poster_path'];
+					}
 
 					let img = "https://image.tmdb.org/t/p/w500/" + result['results'][i]['poster_path'];
 
@@ -227,7 +233,7 @@ let a  = "false"
 					resultHtml += "<img src='" + img + "'>"
 					resultHtml += "<div class='ket'>"
 					resultHtml += "<h4>" + title + "</h4>"
-					resultHtml += "<p class='tgl-tahun'><b>" + release + "</p>"
+					resultHtml += "<p class='tgl-tahun'><b>Release : " + release + "</b></p>"
 					resultHtml += "</div>"
 					resultHtml += "</div>"
 					resultHtml += "</div>"
@@ -240,6 +246,37 @@ let a  = "false"
 			}
 	})
 
+	// memanggil API top upcoming movie
+	$.ajax({
+		url: "https://api.themoviedb.org/3/movie/upcoming?&page=1",
+			data: { "api_key": "4dda69557f9d1b4d4930dd9ee950047d" },
+			dataType: "json",
+			success: function(result, status, xhr){
+				let resultHtml = '';
+				
+				for(i=0; i<5; i++){
 
+					let img = "https://image.tmdb.org/t/p/w500/" + result['results'][i]['poster_path'];
+
+					let title = result['results'][i]['title']
+					let release = result['results'][i]['release_date']
+
+					resultHtml += '<div class="popular-movie">'
+					resultHtml += "<p class='no'>" + (i + 1) + "</p>"
+					resultHtml += "<img src='" + img + "'>"
+					resultHtml += "<div class='ket'>"
+					resultHtml += "<h4>" + title + "</h4>"
+					resultHtml += "<p class='tgl-tahun'><b>Release : " + release + "</b></p>"
+					resultHtml += "</div>"
+					resultHtml += "</div>"
+
+				}
+
+				$("#top-upcoming-movie .main-body").html(resultHtml)
+
+				console.log(result)
+			}
+	})
 
 })
+
