@@ -278,5 +278,21 @@ let a  = "false"
 			}
 	})
 
+	$(document).on('scroll', function(){
+		scrollTopFunction();
+	})
+
+	function scrollTopFunction(){
+		if ($(window).scrollTop() > 20) {
+			$('.btn-scroll').css({ 'display' : 'block'})
+		} else {
+			$('.btn-scroll').css({ 'display' : 'none'})
+		}
+	}
+
+	$('.btn-scroll').on('click', function(){
+		$(window).scrollTop(0)
+	})
+
 })
 

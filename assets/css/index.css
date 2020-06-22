@@ -4,6 +4,10 @@ body {
     background-color: #E9EAED;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p {
     margin: 0;
 }
@@ -730,6 +734,25 @@ span.person-title-film {
     font-weight: bold;
     margin-top: 5px;
     margin: 0;
+}
+
+/* button scroll to the top */
+.btn-scroll {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    padding: 10px 12px;
+    border: none;
+    background-color: #7C7BD7;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    display: none;
+    outline: none;
+}
+
+.btn-scroll:hover {
+    background-color: #3e3d7c;
+    outline: none;
 }
 
 /* --------------------------- DARK THEME ---------------------------------- */
