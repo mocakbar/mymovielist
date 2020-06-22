@@ -294,5 +294,8 @@ let a  = "false"
 		$(window).scrollTop(0)
 	})
 
+	$.getJSON('news.json', function(data){
+		console.log(data)
+	})
 })
 
