@@ -57,48 +57,41 @@ p {
 }
 
 .artikel {
+  position: relative;
   margin-top: 30px;
-  display: block;
+  border-bottom: 1px solid #7C7BD7;
+  padding-bottom: 20px;
   overflow: hidden;
-  padding-bottom: 10px;
-  border-bottom: 1px solid grey;
 }
 
 .artikel img {
   width: 80px;
-  height: 65px;
+  height: 60px;
 }
 
 .artikel span {
   font-size: 16px;
+  font-weight:bold;
   text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
-  margin: 12px 0px;
-  display: inline-block;
-  color: #000000;
 }
 
 .previous {
-  width: 50%;
   float: left;
-  position: relative;
+  width: 50%;
 }
 
 .next {
-  width: 50%;
   float: right;
-  position: relative;
+  width: 50%;
+  margin-right: -29%;
 }
 
-.next img {
-  position: absolute;
-  right: 0;
+.artikel a {
+  color: black;
 }
 
-.next span {
-  position: absolute;
-  right: 82px;
+.artikel a:hover {
+  color: #7C7BD7;
 }
 
 /* dark theme */
