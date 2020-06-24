@@ -1,0 +1,20 @@
+.trailer-soon .main-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trailer-soon .main-body > .coming-trailer {
+  text-align: center;
+  margin: 10px 10px 10px 23px;
+  border-radius: 5px 5px 5px 5px;
+  color: #ffffff;
+}
+
+.dox {
+  width: 500px;
+  height: 300px;
+}
+
+iframe {
+  border: none;
+}
