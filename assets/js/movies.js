@@ -28,6 +28,8 @@ $(document).ready(function(){
     },
   })
 
+  const cek = 'true';
+
   // function menampilkan movie id
   $('.movies').on('click', '.movies-poster', function(){
     let resourceId = $(this).attr("idmovie");
@@ -58,7 +60,11 @@ $(document).ready(function(){
 
         $('.info-movie').html(resultHtml)
 
-        $('#movie-list').show()
+        if(cek == 'true'){
+          $('#box-content').hide()
+          $('#movie-list').show()
+          $(window).scrollTop(0)
+        }
       }
       
     })
@@ -90,40 +96,10 @@ $(document).ready(function(){
 
   })
 
-  // $.ajax({
-  //   url: "https://api.themoviedb.org/3/movie/" + 338762 + "?",
-  //   data: {'api_key' : '4dda69557f9d1b4d4930dd9ee950047d'},
-  //   dataType: "json",
-  //   success: function(result, status, xhr){
-  //     let img = result['poster_path'] == null ?  "assets/img/image-not-found.png" : "https://image.tmdb.org/t/p/w500/" + result['poster_path']
-  //     let title = result['original_title'];
-  //     let runtime = result['runtime'] + 'menit';
-  //     let rilis = result['release_date'];
-  //     let bahasa = result['spoken_languages'][0]['name'];
-  //     let genre =''
-  //     for(x = 0; x<result['genres'].length; x++){
-  //       genre += ' ' + result['genres'][x]['name'];
-  //     }
 
-  //   }
-
-    
-  // })
-
-  // function apaGenre(genre){
-  //   $.ajax({
-  //     url: "https://api.themoviedb.org/3/genre/movie/list?",
-  //     data: {'api_key' : '4dda69557f9d1b4d4930dd9ee950047d'},
-  //     dataType: "json",
-  //     success: function(result, status, xhr){
-
-  //       for(i=0; i<result['genres'].length; i++){
-  //         if(genre == result['genres'][i]['id']){
-  //           console.log(result['genres'][i]['name'])
-  //         }
-  //       }
-  //     },
-  //   })
-  // }
+  $('.btn-close').click(function(){
+    $('#movie-list').hide()
+    $('#box-content').show()
+  })
 
 })
