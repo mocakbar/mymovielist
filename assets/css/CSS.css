@@ -81,7 +81,7 @@
 
 .rating1 {
     width: 110px;
-    height: 50px;
+    height: 70px;
     background-color: black;
 }
 
@@ -109,4 +109,8 @@
 body.dark .no-gutters, body.dark .p-3, body.dark .bg-white {
     background-color: #1d1b26 !important;
     transition: .5s all ease;
+}
+
+body.dark .news-heading h1 {
+    color: grey;
 }
