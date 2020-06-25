@@ -1,0 +1,112 @@
+.kuwi {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.cinta {
+    width: 530px;
+    float: left;
+}
+
+.cintaTwo {
+    clear: left;
+    width: 530px;
+    float: right;
+}
+
+.img-high {
+    width: 530px;
+    height: 450px;
+    position: relative;
+}
+
+.kata {
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 420px;
+    z-index: 4;
+}
+
+.shape {
+    height: 450px;
+    width: 530px;
+    display: block;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.2), rgba(10, 0, 0, 1));
+    position: absolute;
+    top: 0;
+}
+
+.img-high2 {
+    width: 535px;
+    height: 450px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.kata2 {
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    z-index: 5;
+}
+
+.shape2 {
+    height: 450px;
+    width: 535px;
+    display: block;
+    background-image:linear-gradient(rgba(255, 255, 255, 0.2), rgba(10, 0, 0, 1));
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.Pad{
+    padding: 100px;
+    margin-left: 140px;
+}
+.naik{
+    position: relative;
+    bottom: 100px;
+}
+
+.rating1 {
+    width: 110px;
+    height: 50px;
+    background-color: black;
+}
+
+.text_rating {
+    position: relative;
+    bottom: 10px;
+}
+
+.bintang {
+    color: gold ;
+    position: relative;
+    bottom: 57px;
+    left: 40px;
+}
+
+
+.news-heading h1 {
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+
+/* dark theme */
+body.dark .no-gutters, body.dark .p-3, body.dark .bg-white {
+    background-color: #1d1b26 !important;
+    transition: .5s all ease;
+}
