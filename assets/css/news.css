@@ -94,8 +94,92 @@ p {
   color: #7C7BD7;
 }
 
+
+/* comments */
+.komentar {
+  background-color: #fff;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.head-komentar {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 3px solid #7C7BD7;
+}
+
+.input-komentar {
+
+}
+
+.label-comment {
+  display: block;
+  margin-bottom: 0px;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+
+.input-komentar textarea {
+  height: 120px;
+  width: 100%;
+}
+
+.input-komentar input {
+  width: 80%;
+}
+
+#btn-kirim-comment {
+  display: block;
+  margin-top: 20px;
+  background-color: #7C7BD7;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+#btn-kirim-comment:hover {
+  background-color: #000000;
+}
+
+.komenan {
+  display: flex;
+  padding: 20px 10px;
+}
+
+.teks-pesan p {
+  text-indent: unset;
+}
+
+.teks-pesan span {
+  padding-top: 5px;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.teks-pesan span em {
+  font-size: 11px;
+  padding-left: 10px;
+  opacity: 0.5;
+}
+
+.img-komen {
+  margin-right: 20px;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+}
+
+.komenan {
+  /* border-bottom: 1px solid black; */
+}
+
 /* dark theme */
-body.dark .content {
+body.dark .content, body.dark .komentar {
   background-color: #1d1b26;
   color: #898b8d;
   transition: .5s all ease;

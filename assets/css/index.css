@@ -214,6 +214,35 @@ a:hover {
     margin: 15px;
 }
 
+/* page halaman */
+#halaman {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* mymodal */
+
+#myModal {
+    position: relative;
+}
+
+/* btn close person */
+.btn-person-close {
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 10px;
+}
+
+.btn-person-close:hover {
+    color: red;
+}
+
 /* section person film */
 .film-movie {
     width: calc(100% - 39px);
@@ -755,6 +784,8 @@ span.person-title-film {
     outline: none;
 }
 
+
+
 /* --------------------------- DARK THEME ---------------------------------- */
 body.dark, body.dark .nav-header {
     background-color: #16151d;
@@ -795,6 +826,15 @@ body.dark a.btn-navbar, body.dark .popular-movie .no {
 
 body.dark .top1 .popular-movie {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(122, 121, 215, 1));
+}
+
+body.dark #halaman .page-link {
+    background-color: #000000;
+    border-color: #696969;
+}
+body.dark #halaman .page-link:hover {
+    background-color: #696969;
+    color: #fff;
 }
 
 

@@ -102,4 +102,18 @@ $(document).ready(function(){
     $('#box-content').show()
   })
 
+  $.ajax({
+    url: "https://api.themoviedb.org/3/movie/upcoming?&page=1",
+    data: {'api_key' : '4dda69557f9d1b4d4930dd9ee950047d'},
+    dataType: "json",
+    success: function(result, status, xhr){
+      console.log(result)
+    },
+    eror: function(xhr, status){
+      console.log(status + xhr)
+    }
+  
+  })
+
 })
+

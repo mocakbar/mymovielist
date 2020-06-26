@@ -111,6 +111,10 @@ body.dark .no-gutters, body.dark .p-3, body.dark .bg-white {
     transition: .5s all ease;
 }
 
+body.dark .p-3 {
+    border-color: grey;
+}
+
 body.dark .news-heading h1 {
     color: grey;
 }

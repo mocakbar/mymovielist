@@ -19,8 +19,20 @@ function Validation(){
   return pesanEror;
 }
 
+// function total halaman
+function PageNumber(totalPage){
+  const obj = $('#halaman').twbsPagination({
+    totalPages: totalPage,
+    visiblePages: 5,
+    onPageClick: function( event, page){
+      QueryCall(page)
+    }
+  })
+}
 
-let a  = "false"
+// menghilangkan total halaman
+$('#halaman').hide()
+let a;
 
 // function mengambil API dari tmdb
 function QueryCall(page){
@@ -45,15 +57,14 @@ function QueryCall(page){
       resultHtml.append("</div>");
       $('#note').html(resultHtml);
       $('#box-content').hide()
+      $('#myModal').hide()
+      $('#halaman').show()
 
-      if( a == "true"){
-        $('#note, #halaman').show()
-        $('#myModal').hide()
-      } else {
-        $('#myModal').show()
+      if( a == 1){
+        $('#box-content').show()
       }
 
-      // Halaman(result['total_pages'])
+      PageNumber(result['total_pages'])
 
     },
     eror: function(status, xhr, eror){
@@ -84,19 +95,19 @@ $("#note").on('click', '.person', function(){
       let resultHtml = "<div class='person-view'><img class='profil-img' src='" + image + "' /><div class='person-info'><span class='nama-person'><strong>Name Lengkap :</strong> " + nama + "</span><span class='tgl-lahir'><strong>Tanggal Lahir :</strong> " + tanggalLahir + "</span><span class='tempat-lahir'><strong>Tempat Lahir :</strong> " + tempatLahir + "</span><span class='gender'><strong>Jenis Kelamin :</strong> " + gender + "</span><span class='web'><strong>Website : </strong><a href='" + link + "'>" + web + "</a></span><span><strong>Film :</strong></span><div class='film-movie'><div class='rex'></div></div></div><p class='bio'><strong>Biography :</strong>" + biography + "</p>";
 
       $('#content-view').html(resultHtml);
-
+      $(window).scrollTop(0)
       $('#myModal').show()
-      $('#note, #halaman').hide()
+      $('#myModal').show()
+      $('#note, #halaman').hide();
 
-      let y = $('#myModal').show();
-      
+      const x = 'true'
 
-      if(x = y) {
-        return a = 'true'
+      if(x == 'true'){
+        return a = 1;
       } else {
-        return a ='false'
+        return a = 0;
       }
-
+      
     },
     error: function (xhr, status, error) {
       $("#note").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
@@ -106,6 +117,7 @@ $("#note").on('click', '.person', function(){
   CallMovie(resourceId);
 })
 
+  // memanggil orang membintangi film apa saja.
   function CallMovie(id){
     $.ajax({
       url: "https://api.themoviedb.org/3/person/" + id + "/movie_credits?",
@@ -127,34 +139,6 @@ $("#note").on('click', '.person', function(){
       }
     })
   }
-
-  // slider dark theme
-	$(document).on('change', '.switch', function(){
-		$("body").toggleClass("dark")
-	});
-
-	// membuat btn navbar active
-	$(".btn-navbar").click(function(){
-			$(".btn-navbar").removeClass('active').addClass('inactive');
-			$(this).removeClass('inactive').addClass('active');
-  });
-  
-  // membuat tombol function to the top
-  $(document).on('scroll', function(){
-    scrollTopFunction();
-  })
-
-  function scrollTopFunction(){
-    if ($(window).scrollTop() > 20) {
-      $('.btn-scroll').css({ 'display' : 'block'})
-    } else {
-      $('.btn-scroll').css({ 'display' : 'none'})
-    }
-  }
-
-  $('.btn-scroll').on('click', function(){
-    $(window).scrollTop(0)
-  })
 
   //memanggil API Top Movie
 	$.ajax({
@@ -192,6 +176,46 @@ $("#note").on('click', '.person', function(){
 
 				$("#top-movie .main-body").html(resultHtml)
 			}
-	})
+  })
+
+  // slider dark theme
+	$(document).on('change', '.switch', function(){
+		$("body").toggleClass("dark")
+	});
+
+	// membuat btn navbar active
+	$(".btn-navbar").click(function(){
+			$(".btn-navbar").removeClass('active').addClass('inactive');
+			$(this).removeClass('inactive').addClass('active');
+  });
+  
+  // membuat tombol function to the top
+  $(document).on('scroll', function(){
+    scrollTopFunction();
+  })
+
+  function scrollTopFunction(){
+    if ($(window).scrollTop() > 20) {
+      $('.btn-scroll').css({ 'display' : 'block'})
+    } else {
+      $('.btn-scroll').css({ 'display' : 'none'})
+    }
+  }
+
+  $('.btn-scroll').on('click', function(){
+    $(window).scrollTop(0)
+  })
+
+  // button menghilangkan myModal
+  $('.btn-person-close').on('click', () => {
+    $('#myModal').hide()
+    $('#note, #halaman').show()
+  })
+  
+  // $('.btn-person-close').on('click', () => {
+
+  // })
+
+  
 
 })
