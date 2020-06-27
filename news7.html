@@ -48,16 +48,18 @@
 
 	<!-- main navbar -->
 	<nav id="main-navbar">
-		<div class="con-header">
-				<ul class="navbar-list">
-						<li><a href="index.html" class="btn-navbar inactive">Home</a></li>
-						<li><a href="#" class="btn-navbar inactive">News</a></li>
-						<li><a href="#" class="btn-navbar inactive">Review</a></li>
-						<li><a href="upcoming.html" class="btn-navbar inactive">Upcoming</a></li>
-						<li><a href="new-trailer.html" class="btn-navbar inactive">Trailer</a></li>
-						<li><a href="#" class="btn-navbar inactive">Movies</a></li>
-				</ul>
-		</div>
+			<div class="con-header">
+					<ul class="navbar-list">
+							<li><a href="index.html" class="btn-navbar inactive">Home</a></li>
+							<li><a href="news.html" class="btn-navbar inactive">News</a></li>
+							<li><a href="#" class="btn-navbar inactive">Review</a></li>
+							<li><a href="upcoming.html" class="btn-navbar inactive">Upcoming</a></li>
+							<li><a href="new-trailer.html" class="btn-navbar inactive">Trailer</a></li>
+							<li><a href="movies.html" class="btn-navbar inactive">Movies</a></li>
+							<li><a href="top-movie.html" class="btn-navbar inactive">Top Movie</a></li>
+							<li><a href="popular this month.html" class="btn-navbar inactive">Popular Movie</a></li>
+					</ul>
+			</div>
 	</nav>
 
 	<!-- end heading -->
@@ -67,10 +69,11 @@
 		<div id="note"></div>
 		<ul id="halaman"></ul>
 			<div id="myModal">
+				<span class="btn-person-close">x</span>
 				<div id="content-view"></div>
 			</div>
 	</div>
-  <!-- end query search -->
+	<!-- end query search -->
   
   <div id="box-content" class="content-utama">
 		<div id="main-bar">
@@ -96,7 +99,27 @@
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur cupiditate perspiciatis sunt ut. Iure cupiditate dignissimos et repellendus obcaecati quis nobis placeat quisquam neque dolore, delectus dolores possimus architecto! Perspiciatis error sed nostrum asperiores? Accusantium fugit quia at, fugiat, eaque veniam corrupti natus distinctio laudantium modi, sint ipsum autem esse!
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Id numquam delectus repellendus nulla illum repudiandae tempora minus facere quo, aperiam fuga. Perferendis molestias inventore labore at autem sed quo, impedit magnam praesentium modi blanditiis deserunt rem nulla esse. Soluta assumenda facere unde accusantium omnis perferendis libero reprehenderit distinctio nemo labore Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore libero eos facilis explicabo quidem, sit reprehenderit suscipit illo voluptatibus. Nam sed suscipit consequuntur beatae eos esse veritatis, provident eligendi optio, ullam asperiores magnam ad quod dicta rem. Obcaecati dicta, nihil perspiciatis odit rem maiores eligendi perferendis veritatis unde ut odio modi aliquam possimus. Ipsa magni ducimus ex quas aliquid blanditiis praesentium sequi aperiam aut, vel, et dolore sunt repellendus sed tempora assumenda! Ab rerum sint veniam id reprehenderit, natus porro nam at impedit! Culpa distinctio sunt modi, impedit accusantium voluptate ipsum ipsa unde dignissimos assumenda id tenetur cupiditate, nam dolorem.
           </p>
-      </div>
+			</div>
+			
+			<div class="komentar">
+				<div class="head-komentar">
+					<span>comments</span>
+				</div>
+				<div id="hasil-komentar">
+
+				</div>
+				<div class="body-komentar">
+					<div class="input-komentar">
+						<label class="label-comment">komentar</label>
+						<textarea id="isi-komen" placeholder="tulisakan komentar anda" ></textarea>
+						<label class="label-comment">nama</label>
+						<input id="nama-komen" type="text">
+						<label class="label-comment">email</label>
+						<input type="email" id="email-komen">
+						<button id="btn-kirim-comment" type="submit">kirim komentar</button>
+					</div>
+				</div>
+			</div>
       <!-- <div class="artikel">
           <div class="previous">
             <a href="#">
@@ -159,5 +182,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="assets/js/main-function.js"></script>
+<script src="assets/js/komen.js"></script>
 </body>
 </html>

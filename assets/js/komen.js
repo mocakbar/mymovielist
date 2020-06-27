@@ -16,7 +16,9 @@ $(document).ready(function(){
     };
 
     if($('#nama-komen').val() == '' || $('#isi-komen').val() == '' || $('#email-komen').val() == ''){
-      console.log('isi dulu formnya')
+      // resultHtml += "<div class='input'>anda harus mengisi form dengan benar</div>"
+      // $('.body-komentar').appendFirst(resultHtml)
+      alert('masukan inputan dengan benar')
     } else {
       const jam =  dt.getDate() + "/" + (dt.getUTCMonth() + 1) + "/" + dt.getFullYear();
 

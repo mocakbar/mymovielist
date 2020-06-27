@@ -111,10 +111,6 @@ p {
   border-bottom: 3px solid #7C7BD7;
 }
 
-.input-komentar {
-
-}
-
 .label-comment {
   display: block;
   margin-bottom: 0px;
@@ -123,6 +119,7 @@ p {
 }
 
 .input-komentar textarea {
+  padding: 10px;
   height: 120px;
   width: 100%;
 }
@@ -183,4 +180,8 @@ body.dark .content, body.dark .komentar {
   background-color: #1d1b26;
   color: #898b8d;
   transition: .5s all ease;
+}
+
+body.dark .input-komentar textarea:focus{
+  outline: #7C7BD7;
 }
