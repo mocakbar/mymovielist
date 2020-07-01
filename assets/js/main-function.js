@@ -15,6 +15,8 @@ function Validation(){
   let pesanEror = '';
   if($('#query').val() == ''){
     pesanEror = '<span class="eror-teks">"Harap masukan teks"</span>' + "<img class='not-found' src='assets/img/page-not-found.svg'>"
+    $('#box-content').hide()
+    $('#halaman').hide()
   } 
   return pesanEror;
 }
@@ -32,6 +34,7 @@ function PageNumber(totalPage){
 
 // menghilangkan total halaman
 $('#halaman').hide()
+$('#myModal').hide()
 let a;
 
 // function mengambil API dari tmdb
@@ -61,7 +64,7 @@ function QueryCall(page){
       $('#halaman').show()
 
       if( a == 1){
-        $('#box-content').show()
+        $('#note').show()
       }
 
       PageNumber(result['total_pages'])
@@ -96,7 +99,6 @@ $("#note").on('click', '.person', function(){
 
       $('#content-view').html(resultHtml);
       $(window).scrollTop(0)
-      $('#myModal').show()
       $('#myModal').show()
       $('#note, #halaman').hide();
 
@@ -147,7 +149,6 @@ $("#note").on('click', '.person', function(){
 			dataType: "json",
 			success: function(result, status, xhr){
 				let resultHtml = '';
-
 				let wos
 				
 				for(i=0; i<5; i++){
@@ -159,9 +160,14 @@ $("#note").on('click', '.person', function(){
 					let img = "https://image.tmdb.org/t/p/w500/" + result['results'][i]['poster_path'];
 
 					let title = result['results'][i]['title']
-					let release = result['results'][i]['release_date']
+          let release = result['results'][i]['release_date']
+          
+          if((i + 1) == 1) {
+            resultHtml += "<div class='top" + (i + 1) + "' style='background-image: url(" + wos + ")'>"
+          } else {
+            resultHtml += "<div class='top" + (i + 1) + "'>"
+          }
 
-					resultHtml += "<div class='top" + (i + 1) + "'>"
 					resultHtml += '<div class="popular-movie">'
 					resultHtml += "<p class='no'>" + (i + 1) + "</p>"
 					resultHtml += "<img src='" + img + "'>"
@@ -180,8 +186,44 @@ $("#note").on('click', '.person', function(){
 
   // slider dark theme
 	$(document).on('change', '.switch', function(){
-		$("body").toggleClass("dark")
-	});
+    $("body").toggleClass("dark")
+    if($("body").hasClass("dark")){
+      localStorage.setItem('cek', true)
+      // ubahWarna()
+      // alert('berhasil true')
+    } else {
+      localStorage.setItem('cek', false)
+      // ubahWarna()
+      // alert('berhasil false')
+    };
+  });
+
+  let geser = localStorage.getItem('cek')
+  
+  // melakukan pengecekan di local storage
+  if(geser == 'true'){
+    $('.switch input').prop("checked", true)
+    $('.slider').toggleClass('geser')
+    $('body').toggleClass('dark')
+  } else {
+    $('.slider').toggleClass('geser')
+  }
+
+  // membuat keyboard press
+  $(document).on('keydown', '#query', (e) => {
+    tekanEnter(e.key)
+  })
+
+  function tekanEnter(key){
+    if(key == 'Enter'){
+      let validate = Validation();
+      $('#note').html(validate);
+      if(validate == 0){
+        //memanggil function queryCall
+        QueryCall(1)
+      }
+    }
+  }
 
 	// membuat btn navbar active
 	$(".btn-navbar").click(function(){
@@ -211,11 +253,6 @@ $("#note").on('click', '.person', function(){
     $('#myModal').hide()
     $('#note, #halaman').show()
   })
-  
-  // $('.btn-person-close').on('click', () => {
 
-  // })
-
-  
 
 })

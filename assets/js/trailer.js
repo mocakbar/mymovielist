@@ -1,6 +1,6 @@
 $(document).ready(function(){
 		$.ajax({
-      url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLScC8g4bqD47c-qHlsfhGH3j6Bg7jzFy-&key=AIzaSyCmHyLnzhBxkbVJ7dySjtm5VsmlFP97s3o",
+      url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLScC8g4bqD47c-qHlsfhGH3j6Bg7jzFy-&key=AIzaSyCgraMZ6TzVP2XleH2HqFN8vtihk1fpzF0",
 			dataType :'json',
 			success: function(result, status, xhr){
 

@@ -17,8 +17,8 @@ $(document).ready(function(){
 
     if($('#nama-komen').val() == '' || $('#isi-komen').val() == '' || $('#email-komen').val() == ''){
       // resultHtml += "<div class='input'>anda harus mengisi form dengan benar</div>"
-      // $('.body-komentar').appendFirst(resultHtml)
-      alert('masukan inputan dengan benar')
+      $('.label-comment').append("<span>*isi form dengan benar*</span>")
+      // alert('masukan inputan dengan benar')
     } else {
       const jam =  dt.getDate() + "/" + (dt.getUTCMonth() + 1) + "/" + dt.getFullYear();
 
@@ -31,11 +31,21 @@ $(document).ready(function(){
       resultHtml += "</div>"
       
       $('#hasil-komentar').append(resultHtml)
-    
+      $('#nama-komen, #isi-komen, #email-komen, .label-comment span').val("")
+
+      $('.label-comment span').html('')
+
     }
     
   })
 
-  
+
+  // membuat big banner slide down
+  $('.big-banner img').hide()
+  $('.big-banner img').slideDown(1000)
+  $('.big-banner .titledex').hide()
+  $('.big-banner .titledex').slideDown(2000)
+
+
   
 })

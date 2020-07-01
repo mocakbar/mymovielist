@@ -1,32 +1,30 @@
 $(document).ready(function(){
 
-  $.ajax({
-    url: "https://api.themoviedb.org/3/movie/now_playing?page=1",
-    data: {'api_key' : '4dda69557f9d1b4d4930dd9ee950047d'},
-    dataType: "json",
-    success: function(result, status, xhr){
+    $.ajax({
+      url: "https://api.themoviedb.org/3/movie/now_playing?&page=1",
+      data: {'api_key' : '4dda69557f9d1b4d4930dd9ee950047d'},
+      dataType: "json",
+      success: function(result, status, xhr){
 
-      let resultHtml = ''
+        let resultHtml = ''
 
-      for(i = 0 ; i <result['results'].length; i++ ){
+        for(i = 0 ; i <result['results'].length; i++ ){
 
-        let img = "https://image.tmdb.org/t/p/w500/" + result['results'][i]['poster_path'];
-        let idMovie = result['results'][i]['id']
-        resultHtml += "<div class='movies-poster' idmovie='" + idMovie + "'>"
-        resultHtml += "<img src='" + img + "' />"
-        resultHtml += "</div>"
+          let img = "https://image.tmdb.org/t/p/w500/" + result['results'][i]['poster_path'];
+          let idMovie = result['results'][i]['id']
+          resultHtml += "<div class='movies-poster' idmovie='" + idMovie + "'>"
+          resultHtml += "<img src='" + img + "' />"
+          resultHtml += "</div>"
 
-        // for(x=0; x<result['results'][i]['genre_ids'].length; x++){
-        //   apaGenre(result['results'][i]['genre_ids'][x])
-        // }
+          // for(x=0; x<result['results'][i]['genre_ids'].length; x++){
+          //   apaGenre(result['results'][i]['genre_ids'][x])
+          // }
 
-      }
+        }
+        $('.movies .main-body').html(resultHtml)
 
-      console.log(result)
-      $('.movies .main-body').html(resultHtml)
-
-    },
-  })
+      },
+    })
 
   const cek = 'true';
 
@@ -69,6 +67,7 @@ $(document).ready(function(){
       
     })
 
+    // function mendapatkan cast pemain
     $.ajax({
       url: "https://api.themoviedb.org/3/movie/" + resourceId + "/credits?",
       data: {'api_key' : '4dda69557f9d1b4d4930dd9ee950047d'},

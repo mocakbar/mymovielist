@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 	// memanggil API youtube
 	$.ajax({
-		url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=PLScC8g4bqD47c-qHlsfhGH3j6Bg7jzFy-&key=AIzaSyCjLLXWofq_JuX80-LhSBvE7VI2yYIoks4",
+		url: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=PLScC8g4bqD47c-qHlsfhGH3j6Bg7jzFy-&key=AIzaSyAltHSIIyR9R_wYpWamq7ELe9hnpFi6ijQ",
 		accepts: 'application/json',
     dataType :'json',
     success: function(result, status, xhr){
@@ -32,8 +32,6 @@ $(document).ready(function(){
       $('.carousel-item.three').html(mbuh)
       $('.carousel-item.four').html(c)
       $('.carousel-item.five').html(d)
-
-      console.log(result)
       
     },
     eror: function(status, xhr, result){
@@ -93,6 +91,7 @@ $(document).ready(function(){
 			}
 	})
 
+	
 })
 
 

@@ -175,6 +175,12 @@ p {
   /* border-bottom: 1px solid black; */
 }
 
+.label-comment span{
+  color: red;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
 /* dark theme */
 body.dark .content, body.dark .komentar {
   background-color: #1d1b26;

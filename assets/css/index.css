@@ -4,6 +4,18 @@ body {
     background-color: #E9EAED;
 }
 
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+ 
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -789,7 +801,6 @@ span.person-title-film {
 /* --------------------------- DARK THEME ---------------------------------- */
 body.dark, body.dark .nav-header {
     background-color: #16151d;
-    transition: .5s all ease;
 }
 
 /* dark search */
@@ -809,7 +820,6 @@ body.dark .main-body, body.dark #news, body.dark #review,
 body.dark .carousel-item.active, body.dark .popular-movie {
     background-color: #1d1b26;
     color: #898b8d;
-    transition: .5s all ease;
 }
 
 body.dark a, body.dark .ket h4 {
@@ -907,10 +917,16 @@ input:focus + .slider {
 }
 */
 
-input:checked + .slider::before {
+/* input:checked + .slider::before {
   -webkit-transform: translateX(12px);
   -ms-transform: translateX(12px);
   transform: translateX(12px);
+} */
+
+input:checked + .geser::before {
+    -webkit-transform: translateX(12px);
+    -ms-transform: translateX(12px);
+    transform: translateX(12px);
 }
 
 /* Rounded sliders */
